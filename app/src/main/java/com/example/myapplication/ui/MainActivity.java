@@ -13,6 +13,7 @@ import com.example.myapplication.databinding.ActivityMainBinding;
 import com.example.myapplication.model.CommitModel;
 import com.example.myapplication.ui.adapter.CommitListAdapter;
 import com.example.myapplication.ui.base.BaseActivity;
+import com.example.myapplication.utils.GitHubApi;
 import com.example.myapplication.viewmodel.MainViewModel;
 
 import java.util.List;
@@ -38,6 +39,9 @@ public class MainActivity extends BaseActivity<MainViewModel> {
         mainViewModel.loadCommitLocal();
         mainViewModel.getCommit().observe(this, new CommitObserver());
         setupRecyclerView();
+
+        GitHubApi.githubApi(this);
+
 
     }
 
