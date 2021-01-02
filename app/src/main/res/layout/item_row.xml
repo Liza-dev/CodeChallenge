@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <variable
+            name="commitModel"
+            type="com.example.myapplication.model.CommitModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -30,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="TextView"
+                    android:text="@{commitModel.author}"
                     android:textColor="#100F0F"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -47,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="TextView"
+                    android:text="@{commitModel.message}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/txtAuthor"
                     app:layout_constraintHorizontal_bias="0.0"
